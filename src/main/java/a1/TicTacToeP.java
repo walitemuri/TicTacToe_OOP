@@ -8,8 +8,10 @@ public class TicTacToeP {
   private static int depth = 0; 
   private static Scanner input = new Scanner(System.in);
   private static int position;
-  private static char board[] = {'0','|','1','|','2','\n','-','+','-','+','-','\n','3','|','4','|','5','\n','-','+','-','+','-','\n','6','|','7','|','8','\n'};
-  private static int PosToIndex[] = { 0, 2, 4, 12, 14, 16, 24, 26, 28 };
+  private static char[] board = {'0','|','1','|','2','\n','-','+','-','+','-','\n','3','|','4','|','5',
+                                '\n','-','+','-','+','-','\n','6','|','7','|','8','\n'};
+
+  private static int[] posToIndex = {0, 2, 4, 12, 14, 16, 24, 26, 28};
 
 
   public static void setTurn(char turn) {
@@ -21,34 +23,35 @@ public class TicTacToeP {
     playerTurn = turn;
   }
 
-  public static boolean checkBoard(int Position,char board[]) {
+  public static boolean checkBoard(int Position) {
     if (
-      board[PosToIndex[position]] == 'X' ||
-      board[PosToIndex[position]] == 'O'
+      board[posToIndex[position]] == 'X' 
+      ||
+      board[posToIndex[position]] == 'O'
     ) {
       return true;
     }
     return false;
   }
 
-  public static boolean winner(int depth,char board[]) {
+  public static boolean winner(int depth) {
 
     char winner = '?';
     for (int i = 0; i < 3; i++){
-      if (board[PosToIndex[i]] == board[PosToIndex[i+3]] && board[PosToIndex[i+3]]== board[PosToIndex[i+6]]) {
-        winner = board[PosToIndex[i]];
+      if (board[posToIndex[i]] == board[posToIndex[i+3]] && board[posToIndex[i+3]]== board[posToIndex[i+6]]) {
+        winner = board[posToIndex[i]];
         break;
       }
     }
     if(winner == '?'){
-      if (board[PosToIndex[0]] == board[PosToIndex[4]] && board[PosToIndex[4]] == board[PosToIndex[8]]) winner = board[PosToIndex[0]];
-      if (board[PosToIndex[2]] == board[PosToIndex[4]] && board[PosToIndex[4]] == board[PosToIndex[6]]) winner = board[PosToIndex[2]];
+      if (board[posToIndex[0]] == board[posToIndex[4]] && board[posToIndex[4]] == board[posToIndex[8]]) winner = board[posToIndex[0]];
+      if (board[posToIndex[2]] == board[posToIndex[4]] && board[posToIndex[4]] == board[posToIndex[6]]) winner = board[posToIndex[2]];
     }
 
     if(winner == '?'){
       for (int i = 0; i <= 6; i+=3){
-        if (board[PosToIndex[i]] == board[PosToIndex[i+1]] && board[PosToIndex[i+1]] == board[PosToIndex[i+2]]) {
-          winner = board[PosToIndex[i]];
+        if (board[posToIndex[i]] == board[posToIndex[i+1]] && board[posToIndex[i+1]] == board[posToIndex[i+2]]) {
+          winner = board[posToIndex[i]];
           break;
         }
       }
@@ -80,7 +83,7 @@ public static void main(String[] args) {
         
       } else {
         depth++;
-        board[PosToIndex[position]] = playerTurn;
+        board[posToIndex[position]] = playerTurn;
         System.out.println(board);
         setTurn(playerTurn);
         if (depth != 9) {
