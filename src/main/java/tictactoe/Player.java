@@ -9,4 +9,9 @@ public class Player {
 
         symbol = playerSymbol;
     }
+
+    public void setCurrMove (int move) {
+
+        currMove = move;
+    }
 }
