@@ -65,8 +65,8 @@ public class Board {
         int j;
         boolean isZero = false;
 
-        for(i = 0; i <= 3; i++) {
-            for (j = 0; j <= 3; j++) {
+        for(i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
                 if (board[i][j] == 0) {
                     isZero = true;
                 }
@@ -76,25 +76,56 @@ public class Board {
         return !isZero;
     }
 
-    public boolean checkWinner (int row, int column) {
+    public boolean checkWinner () {
         
-        int gmeSymbol = board [row][column];
+        int i, j;
 
-        if(gmeSymbol == 0) {
-
-        return false;
-
+        //Checking along Row
+        for (i = 0; i < 3; i++) {
+            
+            if (board[i][0] == board[i][1] && board[i][0] == board[i][2]) {
+                return true;
+            }
         }
 
-        boolean isCellOutOfRange = (row + 1 > board.length
-                                    || row + 2 > board.length - 1);
+        //Checking along Col
+        for (i = 0; i < 3; i++) {
+            if (board[0][i] == board[1][i] && board[0][i] == board[2][i])
+        }
 
-        if (!isCellOutOfRange && board[row + 1][column] == gmeSymbol 
-            && board[row+2][column] == gmeSymbol) {
-
-                return true;
-
-            }
-        return true;
+        
+        return false;
     }
+
+    public void setGameState () {
+
+        int i , j;
+
+        for (i = 0; i < 3; i ++) {
+            for (j = 0; j < 3; j++) {
+                
+                boolean winner = checkWinner(i, j);
+
+                if (winner) {
+
+                    if (board[i][j] == 1) {
+                        gameState = 1;
+                        return;
+                    }
+                    if (board[i][j] == 2) {
+                        gameState = 2;
+                        return;
+                    }
+                }
+            }
+        }
+
+        gameState = 0;
+
+    }
+
+    public int getGameState () {
+        return gameState;
+    }
+    
 }
