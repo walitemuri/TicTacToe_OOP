@@ -2,8 +2,8 @@ package tictactoe;
 
 public class Player {
     
-    private static String symbol;
-    private static int currMove;
+    private String symbol;
+    private int currMove;
 
     public  void setSymbol(String playerSymbol) {
 
