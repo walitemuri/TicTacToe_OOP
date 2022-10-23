@@ -21,7 +21,7 @@ public class Board {
 
         for(int i = 0; i < 3; i++) {
             if (board[r][i] == 0) {
-                newRow.append(" ");
+                newRow.append("1");
             }
             if (board[r][i] == 1) {
                 newRow.append("O");
@@ -41,8 +41,8 @@ public class Board {
         int position = player.getCurrMove();
         String symbol = player.getSymbol();
 
-        int column = (position - 1) / 3;
-        int row = (position - (column * 3)) - 1;
+        int row = (position - 1) / 3;
+        int column = (position - (row * 3)) - 1;
 
         if (board[row][column] == 0) {
 
