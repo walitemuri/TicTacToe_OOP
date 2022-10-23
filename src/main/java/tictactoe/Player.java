@@ -2,7 +2,7 @@ package tictactoe;
 
 public class Player {
     
-    private static String symbol = " ";
+    private static String symbol;
     private static int currMove;
 
     public  void setSymbol(String playerSymbol) {
@@ -10,7 +10,7 @@ public class Player {
         symbol = playerSymbol;
     }
 
-    public void setCurrMove (int move) {
+    public void setCurrMove(int move) {
 
         currMove = move;
     }
