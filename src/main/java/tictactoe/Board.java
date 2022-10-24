@@ -4,6 +4,17 @@ public class Board {
 
     private int[][] board = new int[3][3];
 
+    public void printInstruction() {
+        System.out.println("\nSelect following inputs to place in square\n");
+        System.out.println("|---|---|---|");
+        System.out.println("| 1 | 2 | 3 |");
+        System.out.println("|---|---|---|");
+        System.out.println("| 4 | 5 | 6 |");
+        System.out.println("|---|---|---|");
+        System.out.println("| 7 | 8 | 9 |");
+        System.out.println("|---|---|---|");
+    }
+
     public void getBoard() {
 
         System.out.println("|---|---|---|");
