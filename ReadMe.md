@@ -18,7 +18,6 @@ Player:
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing and running your program.
 * Windows 7, 8, 10, 13
 * MacOsX Monetery
 * util.Scanner Library was imported
@@ -26,9 +25,6 @@ Player:
 * Terminal
 
 ### Executing program
-
-* How to build and run the program
-* Step-by-step bullets
 
 * First you must use gradle to build files
 ```
@@ -54,14 +50,15 @@ java -cp build/classes/java/main tictactoe.TicTacToeRun
 
 ## Limitations
 
-What isn't done? What things cause errors?  
+The Game lacks a single player option against a computer, random move generation or AI computation could be implemented in the future.
+The Game automatically assigns player 1 "X" and player 2 "O", a choice Scanner could be implemented. The user interaction is limited to the command line, 
+there is no interactive UI for convenient usage. Overall, the game is very simple and has a lot of room for future improvement and development.
 
 ## Author Information
 Name: Wali Temuri - 1183379
 Contact: wtemuri@uoguelph.ca
 ## Development History
 
-Keep a log of what things you accomplish when.  You can use git's tagging feature to tag the versions or you can reference commits.
 * 0.3.2
     * Finished Documentation
 * 0.3.1
