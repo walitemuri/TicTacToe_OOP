@@ -53,11 +53,13 @@ public class Board {
     }
 
     private String getRow(int r) {
+        //Instantiating a StringBuilder object to create modifiable string
         StringBuilder newRow = new StringBuilder("| ");
 
+        //Looping through every row and appending appropriate values contingent on the board matrix values
         for(int i = 0; i < 3; i++) {
             if (board[r][i] == 0) {
-                newRow.append("1");
+                newRow.append("-");
             }
             if (board[r][i] == 1) {
                 newRow.append("O");
@@ -81,12 +83,15 @@ public class Board {
      */
     public boolean placePiece(Player player) {
 
+        //Initializing the position and symbol variables from Player object 
         int position = player.getCurrMove();
         String symbol = player.getSymbol();
 
+        //Converts user position input into key for editing matrix 
         int row = (position - 1) / 3;
         int column = (position - (row * 3)) - 1;
 
+        //Depending on Player symbol, edits the board matrix
         if (board[row][column] == 0) {
 
             if (symbol.equals("O")) {
@@ -116,6 +121,7 @@ public class Board {
         int j;
         boolean isZero = false;
 
+        //Checks if all indicies of board are 0 or empty
         for(i = 0; i < 3; i++) {
             for (j = 0; j < 3; j++) {
                 if (board[i][j] == 0) {
@@ -166,9 +172,11 @@ public class Board {
 
     private boolean isEmpty(int move) {
 
+        //Converts input into key for matrix
         int row = (move - 1) / 3;
         int col = (move - (row * 3)) - 1;
 
+        //Returns true if square is empty
         if (board[row][col] == 0) {
             return true;
         }
@@ -184,9 +192,11 @@ public class Board {
      * @return True if the move is valid and False if invalid
      */
     public boolean isValidMove(Player playerX) {
-
+        
+        //Getting players current move
         int move = playerX.getCurrMove();
 
+        //Checking valid range
         if (move <= 9 && move >= 1) {
             
             if (isEmpty(move)) {
