@@ -14,7 +14,15 @@ package tictactoe;
 public class Board {
 
     private int[][] board = new int[3][3];
-
+    
+    /**
+     * Prints out the instructions for the Game
+     * 
+     * Returns void
+     * 
+     * @param void
+     * @return void
+     */
     public void printInstruction() {
         System.out.println("\nSelect following inputs to place in square\n");
         System.out.println("|---|---|---|");
@@ -25,7 +33,14 @@ public class Board {
         System.out.println("| 7 | 8 | 9 |");
         System.out.println("|---|---|---|");
     }
-
+     /**
+     * Constructs the board interface and prints it 
+     * 
+     * Returns void
+     * 
+     * @param void
+     * @return void
+     */
     public void getBoard() {
 
         System.out.println("|---|---|---|");
@@ -56,7 +71,14 @@ public class Board {
         newRow.deleteCharAt(newRow.lastIndexOf(" "));
         return newRow.toString();
     }
-
+     /**
+     * Places a piece onto the board after extracting players symbol and move int
+     * 
+     * Returns boolean, true or false
+     * 
+     * @param Player a representation of a Player Object
+     * @return boolean true for valid move and false for invalid move
+     */
     public boolean placePiece(Player player) {
 
         int position = player.getCurrMove();
@@ -80,7 +102,14 @@ public class Board {
 
         return false;
     }
-
+     /**
+     * Checks if the board is full (Tie game)
+     * 
+     * Returns boolean true or false
+     * 
+     * @param void
+     * @return True for full Board, False for empty spaces available
+     */
     public boolean checkCat() {
 
         int i;
@@ -97,7 +126,14 @@ public class Board {
 
         return !isZero;
     }
-
+     /**
+     * Checks the board for 3 in a row (a Victory)
+     * 
+     * Returns int - 0, 1 or 2
+     * 
+     * @param void
+     * @return Returns 0 if there is no winner, 1 if O is the winner and 2 if X is the winner
+     */
     public int checkWinner() {
         int i;
         //Checking along Row
@@ -139,7 +175,14 @@ public class Board {
 
         return false;
     }
-
+     /**
+     * Checks whether the move made by Player x is valid
+     * 
+     * Returns True or False
+     * 
+     * @param Player a Player object
+     * @return True if the move is valid and False if invalid
+     */
     public boolean isValidMove(Player playerX) {
 
         int move = playerX.getCurrMove();
