@@ -65,7 +65,7 @@ Keep a log of what things you accomplish when.  You can use git's tagging featur
 * 0.3.2
     * Finished Documentation
 * 0.3.1
-    *Added input verification
+    * Added input verification
 * 0.3.0
     * Completed all class Templates
     * Methods are finished
