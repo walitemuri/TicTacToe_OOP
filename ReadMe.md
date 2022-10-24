@@ -57,18 +57,27 @@ java -cp build/classes/java/main tictactoe.TicTacToeRun
 What isn't done? What things cause errors?  
 
 ## Author Information
-
-Your name and contact information including your email address
-
+Name: Wali Temuri - 1183379
+Contact: wtemuri@uoguelph.ca
 ## Development History
 
 Keep a log of what things you accomplish when.  You can use git's tagging feature to tag the versions or you can reference commits.
-
-* 0.2
-    * Various bug fixes and optimizations
+* 0.3.2
+    * Finished Documentation
+* 0.3.1
+    *Added input verification
+* 0.3.0
+    * Completed all class Templates
+    * Methods are finished
+* 0.2.1
+    * Added Functions: setGameState() --Later Deleted
+    * Checking Win Function started
+* 0.2.0
+    * Added Class: Board, Player
+    * Added Functions: getSymbol(), getCurrMove(), placePiece()
     * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+* 0.1.0
+    * Initial Inception 
 
 ## Acknowledgments
 
