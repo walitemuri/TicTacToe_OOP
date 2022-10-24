@@ -3,7 +3,6 @@ package tictactoe;
 public class Board {
 
     private int[][] board = new int[3][3];
-    private static int gameState = 0;
 
     public void getBoard() {
 
@@ -107,19 +106,31 @@ public class Board {
         return -1;
     }
 
-    public void setGameState() {
+    private boolean isEmpty(int move) {
 
-     if (checkWinner() == 1) {
-         gameState = 1;
-     }else if (checkWinner() == 2) {
-        gameState = 2;
-     }else {
-        gameState = 0;
-     }
+        int row = (move - 1) / 3;
+        int col = (move - (row * 3)) - 1;
 
+        if (board[row][col] == 0) {
+            return true;
+        }
+
+        return false;
     }
 
-    public int getGameState() {
-        return gameState;
+    public boolean isValidMove(Player playerX) {
+
+        int move = playerX.getCurrMove();
+
+        if (move <= 9 && move >= 1) {
+            
+            if (isEmpty(move)) {
+                return true;
+            }
+
+            return false;
+        } 
+
+        return false;
     }
 }
