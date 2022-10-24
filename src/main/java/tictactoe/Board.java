@@ -1,5 +1,16 @@
 package tictactoe;
 
+/**
+ * This class is a Template for the Board Object
+ * <p>
+ * The atttribute of the board is a 3*3 matrix representing the squares
+ * This class handles Updating, Verifying moves and Printing the Board
+ * </p>
+ * <p>
+ * This class also updates the game state = {X win, O win, Tie}
+ * </p>
+ * @author Wali Temuri - 1183379
+ */
 public class Board {
 
     private int[][] board = new int[3][3];
