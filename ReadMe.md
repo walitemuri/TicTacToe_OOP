@@ -1,27 +1,56 @@
 # Project Title
 
-Simple overview of use/purpose.
+TicTacToe OOP Design
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+This Project is a simple TicTacToe game designed to be played by 2 players using the same device and interface. The main purpose for this project was to further my understanding of OOP Design.
+The program consists of three main files, Board.java, Player.java, and TicTacToeRun.Java. The two main objects used to implement the game is the Board and Player objects, the Runner file contains the main
+and is responsible for facilitating the user interaction with the Objects. The main attribute variables of each Object are as follows:
 
+Board:
+* 3 * 3 integer matrix representing the squares of a tictactoe Board
+
+Player:
+* String, playerSymbol for storing if player is "X" or "O"
+* Integer, currentMove for storing the current intended move of player
 ## Getting Started
 
 ### Dependencies
 
 * Describe any prerequisites, libraries, OS version, etc., needed before installing and running your program.
-
-
+* Windows 7, 8, 10, 13
+* MacOsX Monetery
+* util.Scanner Library was imported
+* JDK
+* Terminal
 
 ### Executing program
 
 * How to build and run the program
 * Step-by-step bullets
+
+* First you must use gradle to build files
 ```
-use code blocks for commands
+gradle build
 ```
-* include the expected output
+* This will output the following:
+```
+BUILD SUCCESSFUL in 698ms
+```
+* Next you must run gradle run command
+```
+gradle run
+```
+* The output should be the following:
+```
+To run the program:
+java -cp build/classes/java/main tictactoe.TicTacToeRun
+```
+* Finally you must copy and paste the outputed cmnd into your cmnd line
+```
+java -cp build/classes/java/main tictactoe.TicTacToeRun
+```
 
 ## Limitations
 
